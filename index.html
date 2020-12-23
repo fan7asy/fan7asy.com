@@ -7,31 +7,36 @@
     <link rel="icon" href="icon.png">
 </head>
 
+<audio id="audio">
+    <source src="euromancer.mp3">
+</audio>
+
 <script type="text/javascript">
-function toggleSound() {
+  function toggleSound() {
   var audioElem = document.getElementById('audio');
   if (audioElem.paused)
     audioElem.play();
   else
     audioElem.pause();
-}
-</script>
-    
-<audio id="audio">
-  <source src="euromancer.mp3">
-</audio>
+  }
+</script> <!--euromancer toggle-->
+
+<script>
+  var bleep = new Audio();
+  bleep.src = "click.mp3";
+</script>  <!--click (about) player-->
 
 <style>
-.center {
+  .center {
      margin: 0;
   position: absolute;
   top: 50%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-}   
-</style>
-    
+  }
+</style> <!--centers page/text-->
+
 <style>
       .blink {
         animation: blink-animation .8s steps(2, start) infinite;
@@ -47,64 +52,231 @@ function toggleSound() {
           visibility: hidden;
         }
       }
-</style>
+      @-moz-keyframes blink-animation {
+        to {
+          visibility: hidden;
+        }
+      }
+      @-o-keyframes blink-animation {
+        to {
+          visibility: hidden;
+        }
+      }
+</style>  <!--"_" blink keyframe-->
+
+<style>
+    .button {
+        animation: glow .9s linear infinite;
+        -webkit-animation: glow .9s linear infinite;
+        -moz-animation: glow .9s linear infinite;
+        -o-animation: glow .9s linear infinite;
+        }
+        @keyframes glow {
+            0%{opacity: 0}
+            50%{opacity: 1}
+            100%{opacity: 0}
+        }
+        @-webkit-keyframes glow {
+            0%{opacity: 0}
+            50%{opacity: 1}
+            100%{opacity: 0}
+        }
+        @-moz-keyframes glow {
+            0%{opacity: 0}
+            50%{opacity: 1}
+            100%{opacity: 0}
+        }
+        @-o-keyframes glow {
+            0%{opacity: 0}
+            50%{opacity: 1}
+            100%{opacity: 0}
+        }
+    .button:focus{
+            animation: selected .2s normal forwards;
+            -webkit-animation: selected .2s normal forwards;
+            -moz-animation: selected .2s normal forwards;
+            -o-animation: selected .2s normal forwards;
+        }
+        @keyframes selected {
+            0%{opacity: 1}
+            25%{opacity: 0}
+            50%{opacity: 1}
+            100%{opacity: 0}
+        }
+        @-webkit-keyframes selected {
+            0%{opacity: 1}
+            25%{opacity: 0}
+            50%{opacity: 1}
+            100%{opacity: 0}
+        }
+        @-moz-keyframes selected {
+            0%{opacity: 1}
+            25%{opacity: 0}
+            50%{opacity: 1}
+            100%{opacity: 0}
+        }
+        @-o-keyframes selected {
+            0%{opacity: 1}
+            25%{opacity: 0}
+            50%{opacity: 1}
+            100%{opacity: 0}
+        }
+</style>  <!--button glow/click keyframe-->
+
+<style>
+    .background {
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+        
+        
+        -webkit-animation: bg-scrolling-reverse 0.92s infinite;
+        -moz-animation: bg-scrolling-reverse 0.92s infinite;
+        -o-animation: bg-scrolling-reverse 0.92s infinite;
+        animation: bg-scrolling-reverse 0.92s infinite;
+
+        -webkit-animation-timing-function: linear;
+        -moz-animation-timing-function: linear;
+        -o-animation-timing-function: linear;
+        animation-timing-function: linear;
+    }
+    @-webkit-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+    @-moz-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+    @-o-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+    @keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+
+    @-webkit-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+    @-moz-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+    @-o-keyframes bg-scrolling {
+  0% {background-position: 50px 50px;}
+}
+    @keyframes bg-scrolling {
+  0% {background-position: 50px 50px;}
+}
     
-<div class="container">
-<div class="center">
+    #whiteshape{
+        position:fixed;
+        padding:0;
+        margin:0;
 
-        <p style="text-align: center;"><font size="10">fan7asy<a class="blink">_</a></font></p>
-        <p style="text-align: center;">&nbsp;</p>
-        <p style="text-align: center;"><a style="color:#000000; text-decoration:none" href="https://soundcloud.com/fan7asy"><font size="5">soundcloud</a></p>
-        <p style="text-align: center;"><a style="color:#000000; text-decoration:none" href="https://www.instagram.com/skrigga/"><font size="5">instagram</a></p>
-        <p style="text-align: center;"><a style="color:#000000; text-decoration:none" href="https://twitter.com/seaisalady"><font size="5">twitter</a></p>
-    <nav>
-        <audio id="myAudio" src="euromancer.mp3" preload="auto">
-        </audio>
-        <p style="text-align: center;">
-            <a href="#">
-                <img onclick="javascript:toggleSound();" src="dans.gif"/>
-            </a>
-        </p>
-        <p style="text-align: center;"><font size="5">$$$</a></p>
-    </nav>
+        top:0;
+        left:0;
 
-</div>
-    </div>
+        width: 100%;
+        height: 100%;
+        animation: fadeit 1s ease-in-out;
+        
+    }
+    @keyframes fadeit {
+        0%{background-color: white}
+        100%{background-color: transparent}
+    }
+    
+</style>  <!--background scroller-->
+    
+<style>
+  img{
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none}
+</style>  <!-- nonselectable img -->
+
+<body class="background"><div id="whiteshape">
+    <div class="pagefadein">
+        <div class="center">
+            <div class="home">
+            <div class="noselect"><p style="text-align: center;"><font class="noselect" size="10">fan7asy<a class="blink">_</a></font></p></div>
+            <div class="noselect"><p style="text-align: center;">&nbsp;</p></div>
+            <div class="noselect"><p style="text-align: center;"><a style="color:#000000; text-decoration:none" href="https://soundcloud.com/fan7asy"><font size="5">soundcloud</a></p></div>
+            <div class="noselect"><p style="text-align: center;"><a style="color:#000000; text-decoration:none" href="https://www.instagram.com/skrigga/"><font size="5">instagram</a></p></div>
+            <div class="noselect"><p style="text-align: center;"><a style="color:#000000; text-decoration:none" href="https://twitter.com/seaisalady"><font size="5">twitter</a></p></div>
+
+            <nav>
+                <audio id="eurodancer" src="euromancer.mp3" preload="auto"></audio>
+                <div class="noselect"><p style="text-align: center;"><a href="#"><img noselect="on" onclick="javascript:toggleSound();" src="dans.gif"/></a></p></div>
+            </nav>
+            <nav>
+                <div class="noselect"><p style="text-align: center;"><a id="buy" style="color:#000000; text-decoration:none" href="#" class="button" onmousedown="bleep.play()"><font size="5">buy</a></p></div>
+            </nav>
+            </div>
+            <div class="shop">
+            <iframe src="https://traktrain.com/widget/10260" width="450" height="590" frameborder="0"></iframe>
+            <div class="noselect"><p style="text-align: center;"><a id="back" style="color:#000000; text-decoration:none" href="#" class="button" onmousedown="bleep.play()" onclick="document.getElementByID"><font size="5">back</a></p></div>
+            </div>
+        </div>
+    </div></div>
+    <script>
+        var buy = document.querySelector("#buy");
+        var back = document.querySelector("#back");
+        var shop = document.querySelector(".shop");
+        var home = document.querySelector(".home");
+        buy.addEventListener("click", function(){
+            document.querySelector('.shop').classList.add('show');
+            document.querySelector('.shop').classList.add('animated');
+            home.style.display="none"
+            shop.style.display="block"
+        })
+        back.addEventListener("click", function(){
+            document.querySelector('.home').classList.add('show');
+            document.querySelector('.home').classList.add('animated');
+            home.style.display="block"
+            shop.style.display="none"
+        })
+    </script>
+</body>
 </html>
 
 <!--
-                                            fan7asy.com              
+                    fan7asy.com
 
-                                               ,gggggg,
-                                          ,g@@$@@&$$@$$@g
-                                        g@$$$$$$$$@@$$@@@@
-                                       $$$g$@$g@$@@$@@@@@@C
-                                       @$$@$'j$@@@@@@@@@@@P
-                                       $@$@F '|$@@@@@@@@@@C
-                                       '$$@@p$@%MM$@@@@@@@P
-                                         B@@F$@@|g@@@@@@@@C,
-                                          ` '$@Mlg$@@@@@@@@@N
-                             "||l            ,$@@@@@@@@@@$$$$$g,
-                  wg,    ,|,$@@@@@       ,@$$@$@g@@@@@$$@$$@$@@@MM@@"`
-                ]@N@@g@g@@@$$@@@@@,    ,$$@@$@@@@@@@@@$$@@@$@$l$$M$l$g
-                ]@@@@@@@@@@@@@@@g$I$@g"*'|l$@@@@@@@@@$$M$$$@@$$$$$@@$$@,
-                 $$@@@@@@@@@@@@@@@@@@@@@gg$@@@@@$@$$$$$$@@@$$@$@$$@$$$@@C
-                 '']@@@@@@@@@@@@@@@@@@@@@@$@@@@@$@@$$$$$@@$$@$$@@$$@@@@@@
-                  g@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@$$@$$$@@@@$@$$$$$$$$@@@
-                  *@@@P|]N@@@@@@@@@@@@@@@@@@@@@@@@@@@$@@@@@@@@@$$@@@@@@@
-                       }2N@$@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@$$$$$$@@@@@@@
-                        T$@@@@@@@@@@@@@@@@@@@@@|%@@@@@@@@@@WW@@$$$@@@@P@
-                         %@@@@@@@@@@B@@@@@@@@@@@$l|%N@@@@@""""%M@@@@@@j@
-                          `"N@@MM*    "B@@@@@@@@@@@@g||%NL||||l$$$@@@ ]@
-                                         $@@@@@@@@@@@@@$@@g@|l$$$$@@P @K
-                                         ]@@@@@@@@@@@@@@@@@$$@$$$@$[ ]@@
-                                         ]@@@@@@@@@@@@@@@@@$$@@@$@@@g@@P
-                                         j@@@@@@@@@@@@@@@@@@@@@@@@@@@@$
-                                         @@@@@@@@@@@@@@@@@@@@@@$@P @@@@@C
-                                        @@@@@@@@@$@@$@@@@@@@@@@@@` @@@@@K
-                                        @@@@@@@@$@@$@@@@@@@@@@@@@  "@@@@P
-                                       ,@@$$$@$@$@$@@$@@@@@@@@@@P
-                                      g$@@@@$$@@@@@@@@@@@@@@@@@@P
-                                      @@@@@@@j$$@@@@@@@@@@@@@@@@@@@p
-                                      @@$$$@@@g@@@$@@@@@@@@@@@@@@@@@K
+                        |
+                    .   |
+                        |
+          \    *        |     *    .  /
+            \        *  |  .        /
+         .    \     ___---___     /    .  
+                \.--         --./     
+     ~-_    *  ./               \.   *   _-~
+        ~-_   /                   \   _-~     *
+   *       ~-/                     \-~        
+     .      |                       |      .
+         * |                         | *     
+-----------|                         |-----------
+  .        |                         |        .    
+        *   |                       | *
+           _-\                     /-_    *
+     .  _-~ . \                   /   ~-_     
+     _-~       `\               /'*      ~-_  
+    ~           /`--___   ___--'\           ~
+           *  /        ---     .  \   
+            /     *     |           \
+          /             |   *         \
+                     .  |        .
+                        |
+                        |
 -->
