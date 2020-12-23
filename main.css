@@ -1,82 +1,21 @@
 @import url(https://fonts.googleapis.com/css?family=Exo:100);
 
-@-webkit-keyframes bg-scrolling-reverse {
-  100% {
-    background-position: 50px 50px;
-  }
-}
 
-@-moz-keyframes bg-scrolling-reverse {
-  100% {
-    background-position: 50px 50px;
-  }
-}
 
-@-o-keyframes bg-scrolling-reverse {
-  100% {
-    background-position: 50px 50px;
-  }
+.pagefadein {
+    animation: transitionIn ease 3s;
 }
-
-@keyframes bg-scrolling-reverse {
-  100% {
-    background-position: 50px 50px;
-  }
+.pagefadeout {
+    animation: transitionOut ease 1s;
 }
-
-@-webkit-keyframes bg-scrolling {
-  0% {
-    background-position: 50px 50px;
-  }
-}
-
-@-moz-keyframes bg-scrolling {
-  0% {
-    background-position: 50px 50px;
-  }
-}
-
-@-o-keyframes bg-scrolling {
-  0% {
-    background-position: 50px 50px;
-  }
-}
-
-@keyframes bg-scrolling {
-  0% {
-    background-position: 50px 50px;
-  }
-}
-
-body {
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
-  -webkit-animation: bg-scrolling-reverse 0.92s infinite;
-  /* Safari 4+ */
-  -moz-animation: bg-scrolling-reverse 0.92s infinite;
-  /* Fx 5+ */
-  -o-animation: bg-scrolling-reverse 0.92s infinite;
-  /* Opera 12+ */
-  animation: bg-scrolling-reverse 0.92s infinite;
-  /* IE 10+ */
-  -webkit-animation-timing-function: linear;
-  -moz-animation-timing-function: linear;
-  -o-animation-timing-function: linear;
-  animation-timing-function: linear;
-    
-}
-
-.container {
-    animation: transitionIn 5s;
-}
-
 @keyframes transitionIn {
-    from {
-        opacity: 0;
-    }
-    
-    to {
-        opacity: 1;
-    }
+    0%{opacity: 0}
+    33%{opacity: 0}
+    100%{opacity: 1}
+}
+@keyframes transitionOut {
+    from{opacity: 0}
+    to{opacity: 1}
 }
 
 @font-face {
@@ -95,4 +34,36 @@ body {
 p {
     font-family: fan7asyfont;
     font-weight: 100;
+}
+
+.noselect {
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+} /*makes text not selectable*/
+
+.shop{
+    display: none;
+}
+
+.show {
+    display: block;
+    opacity: 0;
+}
+.animated {
+    animation: appear 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+.disappear {
+    animation: appear 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes appear {
+    0% {opacity: 0}
+    100% {opacity: 1}
 }
