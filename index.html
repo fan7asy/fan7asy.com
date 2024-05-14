@@ -13,8 +13,14 @@
     @font-face {
     font-family: 'Terminus (TTF) for Windows';
     src: url('TerminusTTFWindows.eot');
+    src: url('TerminusTTFWindows.eot?#iefix') format('embedded-opentype'),
+        url('TerminusTTFWindows.woff2') format('woff2'),
+        url('TerminusTTFWindows.woff') format('woff'),
+        url('TerminusTTFWindows.ttf') format('truetype'),
+        url('TerminusTTFWindows.svg#TerminusTTFWindows') format('svg');
     font-weight: 500;
     font-style: normal;
+    font-display: swap;
 }
 
 pre{
