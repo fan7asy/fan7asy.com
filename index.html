@@ -1,268 +1,195 @@
 <!DOCTYPE html>
 <html>
+    
 <title>fan7asy</title>
+    
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2P6Q3YRJ2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-      gtag('config', 'G-Z2P6Q3YRJ2');
-    </script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.62">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1.0, user-scalable=0">
     <link rel="stylesheet" type="text/css" href="main.css">
     <link rel="icon" href="icon.png">
 </head>
 
 <audio id="audio">
-    <source src="euromancer.mp3">
-</audio>
+    <source src="reverse.mp3">
+</audio> <!-- loading reverse.mp3-->
 
 <script type="text/javascript">
-  function toggleSound() {
-  var audioElem = document.getElementById('audio');
-  if (audioElem.paused)
-    audioElem.play();
-  else
-    audioElem.pause();
-  }
-</script> <!--euromancer toggle-->
-
-<script>
-  var bleep = new Audio();
-  bleep.src = "click.mp3";
-</script>  <!--click (about) player-->
-
-<style>
-  .center {
-     margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  }
-</style> <!--centers page/text-->
-
-<style>
-      .blink {
-        animation: blink-animation .8s steps(2, start) infinite;
-        -webkit-animation: blink-animation .8s steps(2, start) infinite;
-      }
-      @keyframes blink-animation {
-        to {
-          visibility: hidden;
-        }
-      }
-      @-webkit-keyframes blink-animation {
-        to {
-          visibility: hidden;
-        }
-      }
-      @-moz-keyframes blink-animation {
-        to {
-          visibility: hidden;
-        }
-      }
-      @-o-keyframes blink-animation {
-        to {
-          visibility: hidden;
-        }
-      }
-</style>  <!--"_" blink keyframe-->
-
-<style>
-    .button {
-        animation: glow .9s linear infinite;
-        -webkit-animation: glow .9s linear infinite;
-        -moz-animation: glow .9s linear infinite;
-        -o-animation: glow .9s linear infinite;
-        }
-        @keyframes glow {
-            0%{opacity: 0}
-            50%{opacity: 1}
-            100%{opacity: 0}
-        }
-        @-webkit-keyframes glow {
-            0%{opacity: 0}
-            50%{opacity: 1}
-            100%{opacity: 0}
-        }
-        @-moz-keyframes glow {
-            0%{opacity: 0}
-            50%{opacity: 1}
-            100%{opacity: 0}
-        }
-        @-o-keyframes glow {
-            0%{opacity: 0}
-            50%{opacity: 1}
-            100%{opacity: 0}
-        }
-    .button:focus{
-            animation: selected .2s normal forwards;
-            -webkit-animation: selected .2s normal forwards;
-            -moz-animation: selected .2s normal forwards;
-            -o-animation: selected .2s normal forwards;
-        }
-        @keyframes selected {
-            0%{opacity: 1}
-            25%{opacity: 0}
-            50%{opacity: 1}
-            100%{opacity: 0}
-        }
-        @-webkit-keyframes selected {
-            0%{opacity: 1}
-            25%{opacity: 0}
-            50%{opacity: 1}
-            100%{opacity: 0}
-        }
-        @-moz-keyframes selected {
-            0%{opacity: 1}
-            25%{opacity: 0}
-            50%{opacity: 1}
-            100%{opacity: 0}
-        }
-        @-o-keyframes selected {
-            0%{opacity: 1}
-            25%{opacity: 0}
-            50%{opacity: 1}
-            100%{opacity: 0}
-        }
-</style>  <!--button glow/click keyframe-->
-
-<style>
-    .background {
-        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
-        
-        
-        -webkit-animation: bg-scrolling-reverse 0.92s infinite;
-        -moz-animation: bg-scrolling-reverse 0.92s infinite;
-        -o-animation: bg-scrolling-reverse 0.92s infinite;
-        animation: bg-scrolling-reverse 0.92s infinite;
-
-        -webkit-animation-timing-function: linear;
-        -moz-animation-timing-function: linear;
-        -o-animation-timing-function: linear;
-        animation-timing-function: linear;
-    }
-    @-webkit-keyframes bg-scrolling-reverse {
-  100% {
-    background-position: 50px 50px;
-  }
+  function toggleSound(event) {
+    event.preventDefault();
+    var audioElem = document.getElementById('audio');
+    if (audioElem.paused)
+        audioElem.play();
+    else
+        audioElem.pause();
 }
-    @-moz-keyframes bg-scrolling-reverse {
-  100% {
-    background-position: 50px 50px;
-  }
-}
-    @-o-keyframes bg-scrolling-reverse {
-  100% {
-    background-position: 50px 50px;
-  }
-}
-    @keyframes bg-scrolling-reverse {
-  100% {
-    background-position: 50px 50px;
-  }
-}
-
-    @-webkit-keyframes bg-scrolling {
-  0% {
-    background-position: 50px 50px;
-  }
-}
-    @-moz-keyframes bg-scrolling {
-  0% {
-    background-position: 50px 50px;
-  }
-}
-    @-o-keyframes bg-scrolling {
-  0% {background-position: 50px 50px;}
-}
-    @keyframes bg-scrolling {
-  0% {background-position: 50px 50px;}
-}
+</script> <!--reverse toggle-->
     
-    #whiteshape{
-        position:fixed;
-        padding:0;
-        margin:0;
-
-        top:0;
-        left:0;
-
-        width: 100%;
-        height: 100%;
-        animation: fadeit 1s ease-in-out;
-        
-    }
-    @keyframes fadeit {
-        0%{background-color: white}
-        100%{background-color: transparent}
-    }
     
-</style>  <!--background scroller-->
-    
-<style>
-  img{
-    user-drag: none;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -ms-user-select: none}
-</style>  <!-- nonselectable img -->
-
-<body class="background"><div id="whiteshape">
-    <div class="pagefadein">
-        <div class="center">
-            <div class="home">
-            <div class="noselect"><p style="text-align: center;"><font class="noselect" size="10">fan7asy<a class="blink">_</a></font></p></div>
-            <div class="noselect"><p style="text-align: center;">&nbsp;</p></div>
-            <div class="noselect"><p style="text-align: center;"><a style="color:#000000; text-decoration:none" href="https://open.spotify.com/artist/6pAZgzhynbmK1s4riiCEg8?si=W4hWWhRVSBSA79Tk9eD-mg"><font size="5">spotify</a></p></div>
-            <div class="noselect"><p style="text-align: center;"><a style="color:#000000; text-decoration:none" href="https://soundcloud.com/fan7asy"><font size="5">soundcloud</a></p></div>
-            <div class="noselect"><p style="text-align: center;"><a style="color:#000000; text-decoration:none" href="https://www.instagram.com/300_zed/"><font size="5">instagram</a></p></div>
-            <div class="noselect"><p style="text-align: center;"><a style="color:#000000; text-decoration:none" href="https://github.com/fan7asy"><font size="5">github</a></p></div>
-
-            <nav>
-                <audio id="eurodancer" src="euromancer.mp3" preload="auto"></audio>
-                <div class="noselect"><p style="text-align: center;"><a href="#"><img noselect="on" onclick="javascript:toggleSound();" src="dans.gif"/></a></p></div>
-            </nav>
-            <nav>
-                <div class="noselect"><p style="text-align: center;"><a id="buy" style="color:#000000; text-decoration:none" href="#" class="button" onmousedown="bleep.play()"><font size="5">listen</a></p></div>
-            </nav>
-            </div>
-            <div class="shop">
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0WxHHkJNAPHddh9tNKj42o?utm_source=generator" width="450" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            <br>
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/49YjYe4NBpOWSGHgBi7EMl?utm_source=generator" width="450" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            <br>
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/73nBoVE977ubfzEWQJm1j2?utm_source=generator" width="450" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            <div class="noselect"><p style="text-align: center;"><a id="back" style="color:#000000; text-decoration:none" href="#" class="button" onmousedown="bleep.play()" onclick="document.getElementByID"><font size="5">back</a></p></div>
-            </div>
-        </div>
-    </div></div>
-    <script>
-        var buy = document.querySelector("#buy");
-        var back = document.querySelector("#back");
-        var shop = document.querySelector(".shop");
-        var home = document.querySelector(".home");
-        buy.addEventListener("click", function(){
-            document.querySelector('.shop').classList.add('show');
-            document.querySelector('.shop').classList.add('animated');
-            home.style.display="none"
-            shop.style.display="block"
-        })
-        back.addEventListener("click", function(){
-            document.querySelector('.home').classList.add('show');
-            document.querySelector('.home').classList.add('animated');
-            home.style.display="block"
-            shop.style.display="none"
-        })
-    </script>
+<body>
+        <pre class="pctext">
+              ▄                                                                                                                                          
+              █                                                                                                                                          
+              █                                                                                                                                          
+              █                                                                                                                                          
+              █                                                                                                                                          
+              █                                                                                                                                          
+            ▄▄█████▄                                                                                                                                     
+          ▄█▀▀█   ▀██                                                                                                                  ▀                 
+        ▄█▀   █    ▀██                                                                                                                 ▀      ▀          
+       ▄█▀    █     █▀                                                                                                                 ▀     ▀     ▀     
+      ██      █                                                                                                                        ▀    ▀    ▀       
+     ██     ▄███▄                                                                                                                      ▀   ▀   ▀     ▄   
+ ▀▀▀██▀▀▀▀▀▀█████▀▀▀▀▀▀▀▀▀▀▀                                                                                                           ▀  ▀  ▀   ▄ ▀     
+    ██       ▀█▀                                                                                                                       ▀ ▀ ▀ ▄ ▀         
+   ██         █                                                                                                                        ▀ ▀ ▀             
+   ██         █   ▄█████████████▄   ▄████████████▄  █████▄▄██████▄  █████████████████  ▄████████████▄   ▄████████████▄  ██████    ██████ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀ 
+   ██         █  ██████▀   ▀██████ ██████▀   ██████ ██████▀  ██████ ██████     ██████ ██████▀   ██████ ██████▀  ▀██████ ██████    ██████                 
+   ██         █  ██████     ██████ ██████    ██████ ██████   ██████ ██████    ██████  ██████    ██████ ██████▄          ██████    ██████                 
+   ██         █  ██████▄                    ▄██████ ██████   ██████          ██████            ▄██████ ██████████████▄  ██████   ▄██████                 
+   ██         █  █████████████████ ▄████████▀██████ ██████   ██████         ██████    ▄████████▀██████ ▀███████████████ ▀████████▀██████                 
+    ██        █  ██████            ██████    ██████ ██████   ██████        ██████     ██████    ██████          ▀██████           ██████                 
+     █▄   ▄█  █  ██████            ██████    ██████ ██████   ██████       ██████      ██████    ██████ ██████▄  ▄██████ ██████    ██████                 
+      ▀████   █  ██████            ▀███████▄▀██████ ██████   ██████      ██████       ▀███████▄▀██████  ▀████████████▀  ██████    ██████                 
+              █  ██████                                                                                                 ▀██████████████▀                 
+                                             ┌──══════════════════════════════════════════════════════════──┐                                            
+                                           ┌─┘                       F7 CREATIVE WORKS                      └─┐                                          
+                                        ┌══└─┘─════════════════════════════════════════════════════════════─└─┘══┐                                       
+                                      ─ │ ┘        Date: [01.01.00]            Cracker: [  fan7asy  ]          └ │                                       
+                                     ·┐ :         Where: [https://fan7asy.com                       ]            : ┌·                                    
+                                      └─│── ─  [ ] Patch  [ ]  Serial#  [ ] Key Gen  [ ] Crack  [ ] CDCheck  ─ ──│─┘                                     
+                                      ─ │ ┐    [ ] Util   [ ]  Game     [ ] App      [X] Other: HTML           ┌ │ ─                                     
+                                       ┌└───────────────────────────────────│────────────────────────────────────┘┐                                      
+                                      ┌└─┘┐                                 │                                   └─┘                                      
+                                      ┌──────·─── ── ─┐                     │                                                                            
+                                      : Release Notes : ────────────────────:───────────────────────────── ─── ──·─                                      
+                                      └─·── ─── ──────┘                     ∙                                    │                                       
+                                      └ │ ┘                                                                      │                                       
+                                        │   My name is Blake. I am a dedicated cybersecurity professional with   │                                       
+                                        │   expertise in network security, incident response, threat analysis,   │                                       
+                                        │   and automating cybersecurity tasks, committed to safegaurding info   │                                       
+                                        :   systems and networks enterprise-wide. This is my website to curate   :                                       
+                                        │   my programs, music, socials, & more. Don't hesitate to contact me.   │                                       
+                                        │                                                                        │                                       
+                                        │                                   .                                    │                                       
+                                       .│                                   :                                    │.                                      
+                                       : ┌─ ── ─── ─────────────────────────────────────────────────────────────┐ :                                      
+                                      ─│─:                      . .. :: [ Links ] :: .. .                       :─│─                                     
+                                       │ └───────────────────────────────────────────────────────────── ─── ── ─┘ │                                      
+                                      ┌│┘                                                                        └│┐                                     
+                                      ┌│┐       [ <a href="https://github.com/fan7asy">github</a> ........................................ ACTIVE ]       ┌│┐                                     
+                                      │││       [ <a href="https://open.spotify.com/artist/6pAZgzhynbmK1s4riiCEg8">spotify</a> ....................................... ACTIVE ]       │││                                     
+                                      │:│       [ <a href="https://www.instagram.com/300_zed/">instagram</a> ..................................... ACTIVE ]       │:│                                     
+                                      │││       [ <a href="https://soundcloud.com/fan7asy">soundcloud</a> .................................... ACTIVE ]       │││                                     
+                                      └│┘                                                                        └│┘                                     
+                                      ┌│┐ ─ ──·──── ─────────  -=-=-=∙·   Works    ·∙=-=-=-  ─────────·──── ── ─ ┌│┐                                     
+                                      │││                                                                        │││                                     
+                                      │:│       [ <a href="https://github.com/fan7asy/F7-EQ">f7eq</a> ............................... minimal 3-band eq ]       │:│                                     
+                                      │││       [ <a href="https://fan7asy.com/">fan7asy.com</a> ...................... you're already here ]       │││                                     
+                                      └│┘       [ <a href="https://github.com/fan7asy/sixcell.store">sixcell.store</a> ........... official website for sixcell ]       └│┘                                     
+                                       │:                                                                  ┌·┐   :│                                      
+                                      ┌│┘             ┌────┐               ┌──·──────────────┐       ┌───────┘   └│┐                                     
+                                      ─ ──·───·────────────│─────────────────────────────────│─────────────·─── ── ─                                     
+                                       │         ┌────┘    :           Statement             :       │            │                                      
+                                      ─·── ───·────────────│─────────────────────────────────│───────────── ───·──·─                                     
+                                       :         └─┐       └──────────────·┘                 └───────┘            :                                      
+                                       ·         └·┘                                                              │                                      
+                                       .         God dwells in thee - Clouded and shrouded there doth sit         │                                      
+                                       :         the Infinte embosomed in a man  -Emerson, Gnothi Seauton         │                                      
+                                       │                                                                          │                                      
+                                       │    Walk the steps towards enlightenment to access the power of seeing    │                                      
+                                       :    infinite truth. Thinking deeply is the secret to awaking from this    :                                      
+                                       ·    nightmare and truly being alive. Within yourself is unspoken power    ·                                      
+                                       .                          waiting to be unlocked.                         .                                      
+                                       :                                                                          :                                      
+                                       │                                   <a href="#" onclick="javascript:toggleSound(event);">►</a>                                      │                                      
+                                      ┌│                                                                          │┐                                     
+                                      :└──────────────────────────────────────────────────────────────────────────┘:                                     
+                                      ∙ Nfo Header By: fan7asy                              Last Updated: 05.04.24 ∙                                     
+                                      : Layout By: strike light / fan7asy / hortau           WWW: www.fan7asy.com :·                                     
+                                      └─══════════════════════════════════════════════════════════════════════════─                                      
+        </pre> <!-- ascii displayed on PC-->
+        <pre class="phonetext pre">
+                ▄                                                               
+                █                                                               
+                █                                                               
+                █                                                               
+                █                                                               
+                █                                                               
+              ▄▄█████▄                                                          
+            ▄█▀▀█   ▀██                                    ▀                    
+          ▄█▀   █    ▀██                                   ▀      ▀             
+         ▄█▀    █     █▀                                   ▀     ▀     ▀        
+        ██      █                                          ▀    ▀    ▀          
+       ██     ▄███▄                                        ▀   ▀   ▀     ▄      
+   ▀▀▀██▀▀▀▀▀▀█████▀▀▀▀▀▀▀▀▀▀                              ▀  ▀  ▀   ▄ ▀        
+      ██       ▀█▀                                         ▀ ▀ ▀ ▄ ▀            
+     ██         █                                          ▀ ▀ ▀                
+     ██         █   ▄████████████████▄  ████████████████████ ▀ ▀ ▀ ▀ ▀ ▀ ▀ ▀    
+     ██         █  ███████▀    ▀███████ ███████      ███████                    
+     ██         █  ███████      ███████ ███████     ███████                     
+     ██         █  ███████▄                        ███████                      
+     ██         █  ████████████████████           ███████                       
+      ██        █  ███████                       ███████                        
+       █▄   ▄█  █  ███████                      ███████                         
+        ▀████   █  ███████                     ███████                          
+                                                                                
+        ┌──══════════════════════════════════════════════════════════──┐        
+      ┌─┘                    FAN7ASY CREATIVE WORKS                    └─┐      
+   ┌══└─┘─════════════════════════════════════════════════════════════─└─┘══┐   
+ ─ │ ┘        Date: [01.01.00]            Cracker: [  fan7asy  ]          └ │   
+·┐ :         Where: [https://fan7asy.com                       ]            : ┌·
+ └─│── ─  [ ] Patch  [ ]  Serial#  [ ] Key Gen  [ ] Crack  [ ] CDCheck  ─ ──│─┘ 
+ ─ │ ┐    [ ] Util   [ ]  Game     [ ] App      [X] Other: HTML           ┌ │ ─ 
+  ┌└───────────────────────────────────│────────────────────────────────────┘┐  
+ ┌└─┘┐                                 │                                   └─┘  
+ ┌──────·─── ── ─┐                     │                                        
+ : Release Notes : ────────────────────:───────────────────────────── ─── ──·─  
+ └─·── ─── ──────┘                     ∙                                    │   
+ └ │ ┘                                                                      │   
+   │   My name is Blake. I am a dedicated cybersecurity professional with   │   
+   │   expertise in network security, incident response, threat analysis,   │   
+   │   and automating cybersecurity tasks, committed to safegaurding info   │   
+   :   systems and networks enterprise-wide. This is my website to curate   :   
+   │   my programs, music, socials, & more. Don't hesitate to contact me.   │   
+   │                                                                        │   
+   │                                   .                                    │   
+  .│                                   :                                    │.  
+  : ┌─ ── ─── ─────────────────────────────────────────────────────────────┐ :  
+ ─│─:                      . .. :: [ Links ] :: .. .                       :─│─ 
+  │ └───────────────────────────────────────────────────────────── ─── ── ─┘ │  
+ ┌│┘                                                                        └│┐ 
+ ┌│┐       [ <a href="https://github.com/fan7asy">github</a> ........................................ ACTIVE ]       ┌│┐ 
+ │││       [ <a href="https://open.spotify.com/artist/6pAZgzhynbmK1s4riiCEg8">spotify</a> ....................................... ACTIVE ]       │││ 
+ │:│       [ <a href="https://www.instagram.com/300_zed/">instagram</a> ..................................... ACTIVE ]       │:│ 
+ │││       [ <a href="https://soundcloud.com/fan7asy">soundcloud</a> .................................... ACTIVE ]       │││ 
+ └│┘                                                                        └│┘ 
+ ┌│┐ ─ ──·──── ─────────  -=-=-=∙·   Works    ·∙=-=-=-  ─────────·──── ── ─ ┌│┐ 
+ │││                                                                        │││ 
+ │:│       [ <a href="https://github.com/fan7asy/F7-EQ">f7eq</a> ............................... minimal 3-band eq ]       │:│ 
+ │││       [ <a href="https://fan7asy.com/">fan7asy.com</a> ...................... you're already here ]       │││ 
+ └│┘       [ <a href="https://github.com/fan7asy/sixcell.store">sixcell.store</a> ........... official website for sixcell ]       └│┘ 
+  │:                                                                  ┌·┐   :│  
+ ┌│┘             ┌────┐               ┌──·──────────────┐       ┌───────┘   └│┐ 
+ ─ ──·───·────────────│─────────────────────────────────│─────────────·─── ── ─ 
+  │         ┌────┘    :           Statement             :       │            │  
+ ─·── ───·────────────│─────────────────────────────────│───────────── ───·──·─ 
+  :         └─┐       └──────────────·┘                 └───────┘            :  
+  ·         └·┘                                                              │  
+  .         God dwells in thee - Clouded and shrouded there doth sit         │  
+  :         the Infinte embosomed in a man  -Emerson, Gnothi Seauton         │  
+  │                                                                          │  
+  │    Walk the steps towards enlightenment to access the power of seeing    │  
+  :    infinite truth. Thinking deeply is the secret to awaking from this    :  
+  ·    nightmare and truly being alive. Within yourself is unspoken power    ·  
+  .                          waiting to be unlocked.                         .  
+  :                                                                          :  
+  │                                   <a href="#" onclick="javascript:toggleSound(event);">►</a>                                      │  
+ ┌│                                                                          │┐ 
+ :└──────────────────────────────────────────────────────────────────────────┘: 
+ ∙ Nfo Header By: fan7asy                              Last Updated: 05.04.24 ∙ 
+ : Layout By: strike light / fan7asy / hortau           WWW: www.fan7asy.com :· 
+ └─══════════════════════════════════════════════════════════════════════════─  
+        </pre> <!-- ascii displayed on mobile-->
 </body>
 </html>
 
