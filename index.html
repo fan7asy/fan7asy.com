@@ -28,10 +28,20 @@ pre{
 
 body{
     font-family:"Terminus (TTF) for Windows",monospace;
-    position:relative
+    position: relative;
     -webkit-font-smoothing: none; /* Disable anti-aliasing */
     -moz-osx-font-smoothing: none; /* Disable anti-aliasing */
-    text-rendering: optimizeSpeed; /* Optimize font rendering */    
+    text-rendering: optimizeSpeed; /* Optimize font rendering */
+            left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        /*Solves a problem in which the content is being cut when the div is smaller than its' wrapper:*/
+        max-width: 100%;
+        max-height: 100%;
+        overflow: auto;
+    
 }
 
 a {
