@@ -29,6 +29,9 @@ pre{
 body{
     font-family:"Terminus (TTF) for Windows",monospace;
     position:relative
+    -webkit-font-smoothing: none; /* Disable anti-aliasing */
+    -moz-osx-font-smoothing: none; /* Disable anti-aliasing */
+    text-rendering: optimizeSpeed; /* Optimize font rendering */    
 }
 
 a {
@@ -39,21 +42,27 @@ a {
 .pctext{
     font-family:"Terminus (TTF) for Windows",monospace; 
     font-weight: normal;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 90%;
     letter-spacing: -1px;
     text-align: center;
     font-size-adjust: auto;
+    -webkit-font-smoothing: none; /* Disable anti-aliasing */
+    -moz-osx-font-smoothing: none; /* Disable anti-aliasing */
+    text-rendering: optimizeSpeed; /* Optimize font rendering */ 
 }
 
 .phonetext{
     font-family:"Terminus (TTF) for Windows",monospace; 
     font-weight: normal;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 100%;
     letter-spacing: -1px;
     text-align: center;
     display: none;
+    -webkit-font-smoothing: none; /* Disable anti-aliasing */
+    -moz-osx-font-smoothing: none; /* Disable anti-aliasing */
+    text-rendering: optimizeSpeed; /* Optimize font rendering */ 
 }
 
 @media only screen and (max-width: 950px){
