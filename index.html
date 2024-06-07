@@ -11,28 +11,28 @@
 
 <style>
     @font-face {
-    font-family: 'Terminus (TTF) for Windows';
-    src: url('TerminusTTFWindows.eot');
-    src: url('TerminusTTFWindows.eot?#iefix') format('embedded-opentype'),
-        url('TerminusTTFWindows.woff2') format('woff2'),
-        url('TerminusTTFWindows.woff') format('woff'),
-        url('TerminusTTFWindows.ttf') format('truetype'),
-        url('TerminusTTFWindows.svg#TerminusTTFWindows') format('svg');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
+        font-family: 'Terminus (TTF) for Windows';
+        src: url('TerminusTTFWindows.eot');
+        src: url('TerminusTTFWindows.eot?#iefix') format('embedded-opentype'),
+             url('TerminusTTFWindows.woff2') format('woff2'),
+             url('TerminusTTFWindows.woff') format('woff'),
+             url('TerminusTTFWindows.ttf') format('truetype'),
+             url('TerminusTTFWindows.svg#TerminusTTFWindows') format('svg');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+    }
 
-pre{
-}
+    pre {
+    }
 
-body{
-    font-family:"Terminus (TTF) for Windows",monospace;
-    position: relative;
-    -webkit-font-smoothing: none; /* Disable anti-aliasing */
-    -moz-osx-font-smoothing: none; /* Disable anti-aliasing */
-    text-rendering: optimizeSpeed; /* Optimize font rendering */
-            left: 0;
+    body {
+        font-family: "Terminus (TTF) for Windows", monospace;
+        position: relative;
+        -webkit-font-smoothing: none; /* Disable anti-aliasing */
+        -moz-osx-font-smoothing: none; /* Disable anti-aliasing */
+        text-rendering: optimizeSpeed; /* Optimize font rendering */
+        left: 0;
         right: 0;
         top: 0;
         bottom: 0;
@@ -41,50 +41,53 @@ body{
         max-width: 100%;
         max-height: 100%;
         overflow: auto;
-    
-}
+        opacity: 0; /* Initial state */
+        transition: opacity 0.6s ease-in; /* Fade-in transition */
+    }
 
-a {
-    text-decoration: none;
-    color: black;
-}
+    body.fade-in {
+        opacity: 1; /* Final state */
+    }
 
-.pctext{
-    font-family:"Terminus (TTF) for Windows", monospace; 
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 75%;
-    letter-spacing: -1px;
-    text-align: center;
-    font-size-adjust: auto;
-    -webkit-font-smoothing: none; /* Disable anti-aliasing */
-    -moz-osx-font-smoothing: none; /* Disable anti-aliasing */
-    text-rendering: optimizeSpeed; /* Optimize font rendering */ 
-}
+    a {
+        text-decoration: none;
+        color: black;
+    }
 
-.phonetext{
-    font-family:"Terminus (TTF) for Windows", monospace; 
-    font-weight: normal;
-    font-size: 11px;
-    line-height: 75%;
-    letter-spacing: -1px;
-    text-align: center;
-    display: none;
-    -webkit-font-smoothing: none; /* Disable anti-aliasing */
-    -moz-osx-font-smoothing: none; /* Disable anti-aliasing */
-    text-rendering: optimizeSpeed; /* Optimize font rendering */ 
-}
+    .pctext {
+        font-family: "Terminus (TTF) for Windows", monospace; 
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 75%;
+        letter-spacing: -1px;
+        text-align: center;
+        font-size-adjust: auto;
+        -webkit-font-smoothing: none; /* Disable anti-aliasing */
+        -moz-osx-font-smoothing: none; /* Disable anti-aliasing */
+        text-rendering: optimizeSpeed; /* Optimize font rendering */ 
+    }
 
-@media only screen and (max-width: 950px){
-    
-    .pctext{
+    .phonetext {
+        font-family: "Terminus (TTF) for Windows", monospace; 
+        font-weight: normal;
+        font-size: 11px;
+        line-height: 75%;
+        letter-spacing: -1px;
+        text-align: center;
         display: none;
+        -webkit-font-smoothing: none; /* Disable anti-aliasing */
+        -moz-osx-font-smoothing: none; /* Disable anti-aliasing */
+        text-rendering: optimizeSpeed; /* Optimize font rendering */ 
     }
-    
-    .phonetext{
-        display: block;
+
+    @media only screen and (max-width: 950px) {
+        .pctext {
+            display: none;
+        }
+        .phonetext {
+            display: block;
+        }
     }
-}
 </style>
 
 <audio id="audio">
@@ -92,7 +95,7 @@ a {
 </audio> <!-- loading reverse.mp3-->
 
 <script type="text/javascript">
-  function toggleSound(event) {
+function toggleSound(event) {
     event.preventDefault();
     var audioElem = document.getElementById('audio');
     if (audioElem.paused)
@@ -100,6 +103,9 @@ a {
     else
         audioElem.pause();
 }
+window.addEventListener('load', function() {
+    document.body.classList.add('fade-in');
+});
 </script> <!--reverse toggle-->
     
     
